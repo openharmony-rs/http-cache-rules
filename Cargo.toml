@@ -1,0 +1,33 @@
+[package]
+name = "http-cache-rules"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+license = "MIT OR Apache-2.0"
+description = "RFC 9111 caching rules for a private (user agent) HTTP cache: storability, freshness, age, Vary, validation and freshening"
+keywords = ["http", "cache", "rfc9111", "cache-control", "browser"]
+categories = ["web-programming::http-client", "caching"]
+
+[features]
+default = []
+serde = ["dep:serde"]
+
+[dependencies]
+http = "1"
+serde = { version = "1", features = ["derive"], optional = true }
+sha2 = "0.10"
+
+[dev-dependencies]
+httpdate = "1"
+postcard = { version = "1", features = ["use-std"] }
+proptest = "1"
+serde = { version = "1", features = ["derive"] }
+
+[[example]]
+name = "cache-tests-proxy"
+path = "tests/cache-tests/proxy.rs"
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(kani)'] }
+unsafe_code = "forbid"
+missing_docs = "warn"

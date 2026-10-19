@@ -1,0 +1,8 @@
+# The Kani harnesses are only compiled by `cargo kani`, so mutating them
+# under `cargo test` tells nothing.
+exclude_globs = ["src/proofs.rs"]
+
+# Equivalent mutant: returning the position of the comma that ends an element,
+# instead of the position after it, only adds one empty element to the next
+# step, which the parser skips with the same result.
+exclude_re = ['src/directives.rs:323:39: replace \+ with \* in parse_element']

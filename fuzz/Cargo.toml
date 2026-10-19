@@ -1,0 +1,35 @@
+[package]
+name = "http-cache-rules-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2024"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+arbitrary = { version = "1", features = ["derive"] }
+http = "1"
+http-cache-rules = { path = ".." }
+libfuzzer-sys = "0.4"
+
+[[bin]]
+name = "http_date"
+path = "fuzz_targets/http_date.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "directives"
+path = "fuzz_targets/directives.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "exchange"
+path = "fuzz_targets/exchange.rs"
+test = false
+doc = false
+bench = false

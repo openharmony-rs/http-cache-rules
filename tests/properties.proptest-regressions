@@ -1,0 +1,7 @@
+# Seeds for failure cases proptest has generated in the past. It is
+# automatically read and these particular cases re-run before any
+# novel cases are generated.
+#
+# It is recommended to check this file in to source control so that
+# everyone who runs the test benefits from these saved cases.
+cc 1ba53315de20ba9973cde28cea2a4b85c1e53ffe659d39c3fab3400603007d6b # shrinks to status = 200, response = [("expires", "Thu, 09 Oct 2025 13:32:25 GMT"), ("date", "Thu, 09 Oct 2025 13:32:25 GMT")], request = [], elapsed = 0
